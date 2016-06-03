@@ -27,14 +27,21 @@ class Login extends CI_Controller {
 	{
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-		if($username == 'eliza' && $password == '123')
+		
+		if(($username == 'eliza' && $password == '123')||($username == 'tes' && $password == '321'))
 		{
-			$data['username'] = $username;
-			$this->load->view('admin_view',$data);
+			$this->session->set_userdata(array('username'=>$username));
+			$this->load->view('admin_view');
 		}
 		else{
 			$data['error'] = 'Account is invalid';
 			$this->load->view('login_view',$data);
 		}
+	}
+
+	public function logout()
+	{
+		$this->session->unset_userdata('username');
+		redirect("login");
 	}
 }
