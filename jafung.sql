@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.1.12
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2016 at 06:43 AM
--- Server version: 10.1.10-MariaDB
--- PHP Version: 5.6.15
+-- Generation Time: Jun 03, 2016 at 03:37 AM
+-- Server version: 5.6.16
+-- PHP Version: 5.5.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `jafung`
@@ -26,15 +26,30 @@ SET time_zone = "+00:00";
 -- Table structure for table `tbl_dupak`
 --
 
-CREATE TABLE `tbl_dupak` (
+CREATE TABLE IF NOT EXISTS `tbl_dupak` (
   `id` varchar(100) NOT NULL DEFAULT '',
   `tgl_pengajuan` varchar(100) NOT NULL DEFAULT '',
   `jenis_pengajuan` varchar(100) NOT NULL DEFAULT '',
   `periode` varchar(100) NOT NULL DEFAULT '',
   `status` varchar(100) NOT NULL DEFAULT '',
   `ak_diajukan` varchar(100) NOT NULL DEFAULT '',
-  `ak_disetujuin` varchar(100) NOT NULL DEFAULT ''
+  `ak_disetujuin` varchar(100) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_login`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_login` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `level` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -42,7 +57,7 @@ CREATE TABLE `tbl_dupak` (
 -- Table structure for table `tbl_pejabat`
 --
 
-CREATE TABLE `tbl_pejabat` (
+CREATE TABLE IF NOT EXISTS `tbl_pejabat` (
   `nip` varchar(100) NOT NULL DEFAULT '',
   `nama` varchar(100) DEFAULT NULL,
   `tempat` varchar(100) DEFAULT NULL,
@@ -57,7 +72,8 @@ CREATE TABLE `tbl_pejabat` (
   `sk_pns` tinytext,
   `sk_pangkat_terakhir` tinytext,
   `sk_jabatan_terakhir` tinytext,
-  `pak_terakhir` tinytext
+  `pak_terakhir` tinytext,
+  PRIMARY KEY (`nip`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -66,10 +82,11 @@ CREATE TABLE `tbl_pejabat` (
 -- Table structure for table `tbl_unsur_kegiatan`
 --
 
-CREATE TABLE `tbl_unsur_kegiatan` (
+CREATE TABLE IF NOT EXISTS `tbl_unsur_kegiatan` (
   `id` varchar(100) NOT NULL DEFAULT '',
   `tgl_peraturan` varchar(100) NOT NULL DEFAULT '',
-  `status_peraturan` varchar(100) NOT NULL DEFAULT ''
+  `status_peraturan` varchar(100) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -78,7 +95,7 @@ CREATE TABLE `tbl_unsur_kegiatan` (
 -- Table structure for table `tbl_unsur_kredit`
 --
 
-CREATE TABLE `tbl_unsur_kredit` (
+CREATE TABLE IF NOT EXISTS `tbl_unsur_kredit` (
   `id` varchar(100) NOT NULL DEFAULT '',
   `jenis_unsur` varchar(100) DEFAULT '',
   `unsur` varchar(100) DEFAULT '',
@@ -88,36 +105,9 @@ CREATE TABLE `tbl_unsur_kredit` (
   `satuan_hasil` varchar(100) DEFAULT '',
   `angka_kredit` varchar(100) DEFAULT '',
   `batasan_penilaian` varchar(100) DEFAULT '',
-  `bukti_fisik` varchar(100) DEFAULT ''
+  `bukti_fisik` varchar(100) DEFAULT '',
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `tbl_dupak`
---
-ALTER TABLE `tbl_dupak`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_pejabat`
---
-ALTER TABLE `tbl_pejabat`
-  ADD PRIMARY KEY (`nip`);
-
---
--- Indexes for table `tbl_unsur_kegiatan`
---
-ALTER TABLE `tbl_unsur_kegiatan`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_unsur_kredit`
---
-ALTER TABLE `tbl_unsur_kredit`
-  ADD PRIMARY KEY (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

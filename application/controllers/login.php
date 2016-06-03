@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class login extends CI_Controller {
+class Login extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,5 +21,20 @@ class login extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('login_view');
+	}
+
+	public function process()
+	{
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		if($username == 'eliza' && $password == '123')
+		{
+			$data['username'] = $username;
+			$this->load->view('admin_view',$data);
+		}
+		else{
+			$data['error'] = 'Account is invalid';
+			$this->load->view('login_view',$data);
+		}
 	}
 }
