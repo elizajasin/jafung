@@ -4,7 +4,7 @@ class M_login extends CI_Model{
 		$this->load->database();
 	}
 	function m_aksi($data){		
-		$d = $this->db->get_where('users',$data);	
+		$d = $this->db->get_where('tbl_login',$data);	
 		return $d->num_rows();
 	}
 }

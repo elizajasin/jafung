@@ -262,7 +262,7 @@
                 <img src="<?php echo base_url()."assets/"; ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  <?php echo $_SESSION['username']; ?> - Web Developer
+                  <?php echo $_SESSION['username']; ?> - <?php echo $_SESSION['level']; ?>
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>

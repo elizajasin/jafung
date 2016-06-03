@@ -18,6 +18,13 @@ class Login extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see http://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function __construct(){
+		parent::__construct();
+		$this->load->helper(array('form','url'));
+		$this->load->model('m_login');
+		$this->load->library('session');
+	}
+
 	public function index()
 	{
 		$this->load->view('login_view');
@@ -25,15 +32,27 @@ class Login extends CI_Controller {
 
 	public function process()
 	{
-		$username = $this->input->post('username');
-		$password = $this->input->post('password');
-		
-		if(($username == 'eliza' && $password == '123')||($username == 'tes' && $password == '321'))
-		{
-			$this->session->set_userdata(array('username'=>$username));
-			$this->load->view('admin_view');
-		}
-		else{
+		$data=array(
+			'username' =>$this->input->post('username'),
+			'password' =>$this->input->post('password'),
+			'level' =>$this->input->post('level')
+		);
+		$cek=$this->m_login->m_aksi($data);
+		if ($cek == 1){
+			$this->session->set_userdata($data);	
+			if (($this->session->userdata('level')  == 'Admin')){		
+				redirect('admin');
+			}
+			elseif (($this->session->userdata('level')  == 'Pejabat Fungsional')) {		
+				redirect('welcome');
+			}
+			elseif (($this->session->userdata('level') == 'Tim Sekretariat')) {
+				$level = '3';
+			}
+			else {
+				$level = '4';
+			}
+		}else{
 			$data['error'] = 'Account is invalid';
 			$this->load->view('login_view',$data);
 		}

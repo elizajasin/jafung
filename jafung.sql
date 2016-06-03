@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2016 at 03:37 AM
+-- Generation Time: Jun 03, 2016 at 11:18 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -47,9 +47,19 @@ CREATE TABLE IF NOT EXISTS `tbl_login` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `level` int(11) NOT NULL,
+  `level` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=119 ;
+
+--
+-- Dumping data for table `tbl_login`
+--
+
+INSERT INTO `tbl_login` (`id`, `username`, `password`, `level`) VALUES
+(115, 'eliza', '1', 'Admin'),
+(116, 'riviera', '2', 'Pejabat Fungsional'),
+(117, 'rachmawati', '3', 'Tim Sekretariat'),
+(118, 'jasin', '4', 'Tim Penilai');
 
 -- --------------------------------------------------------
 
@@ -61,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `tbl_pejabat` (
   `nip` varchar(100) NOT NULL DEFAULT '',
   `nama` varchar(100) DEFAULT NULL,
   `tempat` varchar(100) DEFAULT NULL,
-  `tgl_lahir` varchar(100) DEFAULT NULL,
+  `tgl_lahir` date DEFAULT NULL,
   `pangkat` varchar(100) DEFAULT NULL,
   `pangkat_terakhir` varchar(100) DEFAULT NULL,
   `jabatan` varchar(100) DEFAULT NULL,
@@ -73,8 +83,16 @@ CREATE TABLE IF NOT EXISTS `tbl_pejabat` (
   `sk_pangkat_terakhir` tinytext,
   `sk_jabatan_terakhir` tinytext,
   `pak_terakhir` tinytext,
+  `id_akun` int(11) NOT NULL,
   PRIMARY KEY (`nip`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_pejabat`
+--
+
+INSERT INTO `tbl_pejabat` (`nip`, `nama`, `tempat`, `tgl_lahir`, `pangkat`, `pangkat_terakhir`, `jabatan`, `jabatan_terakhir`, `unit_organisasi`, `instansi`, `angka_kredit`, `sk_pns`, `sk_pangkat_terakhir`, `sk_jabatan_terakhir`, `pak_terakhir`, `id_akun`) VALUES
+('1111111', 'Eliza Jasin', 'Jakarta', '2016-06-05', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 115);
 
 -- --------------------------------------------------------
 
