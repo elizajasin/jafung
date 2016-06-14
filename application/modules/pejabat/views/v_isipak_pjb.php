@@ -329,18 +329,18 @@
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li>
-            <a href="<?php echo base_url(). 'index.php'; ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+            <a href="<?php echo base_url(). 'index.php/pejabat'; ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
         </li>
         <li>
-            <a href="<?php echo base_url(). 'index.php/jafung_profile'; ?>"><i class="fa fa-user"></i> <span>Profile</span></a>
+            <a href="<?php echo base_url(). 'index.php/pejabat/profile'; ?>"><i class="fa fa-user"></i> <span>Profile</span></a>
         </li>
         <li class="treeview">
             <a href="#"><i class="fa fa-credit-card"></i> <span>PAK</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
-                <li><a href="<?php echo base_url(). 'index.php/jafung_daftarPAK'; ?>"><i class="fa fa-circle-o"></i>Daftar PAK</a></li>
-                <li><a href="<?php echo base_url(). 'index.php/jafung_detailPAK'; ?>"><i class="fa fa-circle-o"></i>Detail PAK</a></li>
+                <li><a href="<?php echo base_url(). 'index.php/pejabat/daftarpak'; ?>"><i class="fa fa-circle-o"></i>Daftar PAK</a></li>
+                <li><a href="<?php echo base_url(). 'index.php/pejabat/detailpak'; ?>"><i class="fa fa-circle-o"></i>Detail PAK</a></li>
                 <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Isi dan Edit Rincian Kredit</a></li>
-                <li><a href="<?php echo base_url(). 'index.php/jafung_dupak'; ?>"><i class="fa fa-circle-o"></i>DUPAK</a></li>
+                <li><a href="<?php echo base_url(). 'index.php/pejabat/dupak'; ?>"><i class="fa fa-circle-o"></i>DUPAK</a></li>
             </ul>
         </li>
       </ul>

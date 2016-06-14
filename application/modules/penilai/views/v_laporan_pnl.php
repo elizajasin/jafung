@@ -329,19 +329,22 @@
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li>
-            <a href="<?php echo base_url(). 'index.php'; ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
+            <a href="<?php echo base_url(). 'index.php/penilai/index'; ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
         </li>
         <li>
-            <a href="<?php echo base_url(). 'index.php/jafung_profile'; ?>"><i class="fa fa-user"></i> <span>Profile</span></a>
+            <a href="<?php echo base_url(). 'index.php/penilai/viewpjb'; ?>"><i class="fa fa-group"></i> <span>View Pejabat</span></a>
         </li>
-        <li class="treeview">
-            <a href="#"><i class="fa fa-credit-card"></i> <span>PAK</span> <i class="fa fa-angle-left pull-right"></i></a>
-            <ul class="treeview-menu">
-                <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Daftar PAK</a></li>
-                <li><a href="<?php echo base_url(). 'index.php/jafung_detailPAK'; ?>"><i class="fa fa-circle-o"></i>Detail PAK</a></li>
-                <li><a href="<?php echo base_url(). 'index.php/jafung_isiPAK'; ?>"><i class="fa fa-circle-o"></i>Isi dan Edit Rincian Kredit</a></li>
-                <li><a href="<?php echo base_url(). 'index.php/jafung_dupak'; ?>"><i class="fa fa-circle-o"></i>DUPAK</a></li>
-            </ul>
+        <li>
+            <a href="<?php echo base_url(). 'index.php/penilai/daftarpak'; ?>"><i class="fa fa-book"></i> <span>Daftar PAK</span></a>
+        </li>
+        <li>
+            <a href="<?php echo base_url(). 'index.php/penilai/daftarpnl'; ?>"><i class="fa fa-book"></i> <span>Daftar Penilai</span></a>
+        </li>
+        <li>
+            <a href="<?php echo base_url(). 'index.php/penilai/penilaian'; ?>"><i class="fa fa-pencil"></i> <span>Penilaian</span></a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="fa fa-report"></i> <span>Laporan</span></a>
         </li>
       </ul>
     </section>
@@ -353,13 +356,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        DUPAK
+        Profile
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-user"></i> Home</a></li>
-        <li class="active">PAK</li>
-        <li>DUPAK</li>
+        <li class="active">Profile</li>
       </ol>
     </section>
 

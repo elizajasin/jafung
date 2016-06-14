@@ -1,23 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+class Login extends MX_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function __construct(){
 		parent::__construct();
 		$this->load->helper(array('form','url'));
@@ -27,7 +12,7 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('login_view');
+		$this->load->view('v_login');
 	}
 
 	public function process()
@@ -41,10 +26,12 @@ class Login extends CI_Controller {
 		if ($cek == 1){
 			$this->session->set_userdata($data);	
 			if (($this->session->userdata('level')  == 'Admin')){		
-				redirect('admin');
+				$this->load->module('admin');
+				$this->admin->index();
 			}
 			elseif (($this->session->userdata('level')  == 'Pejabat Fungsional')) {		
-				redirect('welcome');
+				$this->load->module('pejabat');
+				$this->pejabat->index();
 			}
 			elseif (($this->session->userdata('level') == 'Tim Sekretariat')) {
 				$level = '3';
@@ -54,7 +41,7 @@ class Login extends CI_Controller {
 			}
 		}else{
 			$data['error'] = 'Account is invalid';
-			$this->load->view('login_view',$data);
+			$this->load->view('v_login',$data);
 		}
 	}
 
