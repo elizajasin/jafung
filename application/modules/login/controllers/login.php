@@ -17,7 +17,10 @@ class Login extends MX_Controller {
 
 	public function process()
 	{
+		
+		$dt = $this->m_login->get_id($this->input->post('username'));
 		$data=array(
+			'id' =>$dt,
 			'username' =>$this->input->post('username'),
 			'password' =>$this->input->post('password'),
 			'level' =>$this->input->post('level')
@@ -25,7 +28,7 @@ class Login extends MX_Controller {
 		$cek=$this->m_login->m_aksi($data);
 		if ($cek == 1){
 			$this->session->set_userdata($data);	
-			if (($this->session->userdata('level')  == 'Admin')){		
+			if (($this->session->userdata('level')  == 'Admin')){
 				$this->load->module('admin');
 				$this->admin->index();
 			}
@@ -34,10 +37,12 @@ class Login extends MX_Controller {
 				$this->pejabat->index();
 			}
 			elseif (($this->session->userdata('level') == 'Tim Sekretariat')) {
-				$level = '3';
+				$this->load->module('sekretariat');
+				$this->sekretariat->index();
 			}
 			else {
-				$level = '4';
+				$this->load->module('penilai');
+				$this->penilai->index();
 			}
 		}else{
 			$data['error'] = 'Account is invalid';

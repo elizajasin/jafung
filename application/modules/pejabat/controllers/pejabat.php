@@ -3,33 +3,53 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Pejabat extends MX_Controller {
 
+	public function __construct(){
+		parent::__construct();
+		$this->load->helper(array('form','url'));
+		$this->load->model('m_pejabat');
+		$this->load->library('session');
+	}
+
 	public function index()
 	{
-		$this->load->view('v_dashboard_pjb');
+		$user = $_SESSION['id'];
+		$data = $this->m_pejabat->getPjb($user);
+		$this->load->library('table');
+		$this->load->view('v_dashboard_pjb',array('data' => $data ));
 	}
 
 	public function profile()
 	{
-		$this->load->view('v_profile_pjb');
+		$data = $this->m_pejabat->getPjb();
+		$this->load->library('table');
+		$this->load->view('v_profile_pjb',array('data' => $data ));
 	}
 
 	public function isipak()
 	{
-		$this->load->view('v_isipak_pjb');
+		$data = $this->m_pejabat->getPjb();
+		$this->load->library('table');
+		$this->load->view('v_isipak_pjb',array('data' => $data ));
 	}
 
 	public function dupak()
 	{
-		$this->load->view('v_dupak_pjb');
+		$data = $this->m_pejabat->getPjb();
+		$this->load->library('table');
+		$this->load->view('v_dupak_pjb',array('data' => $data ));
 	}
 
 	public function detailpak()
 	{
-		$this->load->view('v_detailpak_pjb');
+		$data = $this->m_pejabat->getPjb();
+		$this->load->library('table');
+		$this->load->view('v_detailpak_pjb',array('data' => $data ));
 	}
 
 	public function daftarpak()
 	{
-		$this->load->view('v_daftarpak_pjb');
+		$data = $this->m_pejabat->getPjb();
+		$this->load->library('table');
+		$this->load->view('v_daftarpak_pjb',array('data' => $data ));
 	}
 }
