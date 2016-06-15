@@ -20,7 +20,8 @@ class Pejabat extends MX_Controller {
 
 	public function profile()
 	{
-		$data = $this->m_pejabat->getPjb();
+		$user = $_SESSION['id'];
+		$data = $this->m_pejabat->getPjb($user);
 		$this->load->library('table');
 		$this->load->view('v_profile_pjb',array('data' => $data ));
 	}
