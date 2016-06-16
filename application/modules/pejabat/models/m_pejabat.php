@@ -10,5 +10,10 @@ class M_pejabat extends CI_Model{
 		return $data->result_array();
 	}
 
+	function getDupak($where=''){
+		$data = $this->db->query('select * from tbl_dupak where id_akun = "'.$where.'"');
+		return $data->result_array();
+	}
+
 }
 ?>

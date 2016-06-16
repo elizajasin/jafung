@@ -18,5 +18,14 @@ class M_login extends CI_Model{
 		}
 		return $dat;
 	}
+
+	function get_nama($where){
+		$d = $this->db->query('select nama from tbl_pejabat where id_akun = "'.$where.'"');
+		foreach ($d->result() as $row)
+		{
+		   $dat = $row->nama;
+		}
+		return $dat;
+	}
 }
 ?>

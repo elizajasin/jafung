@@ -49,7 +49,8 @@ class Pejabat extends MX_Controller {
 
 	public function daftarpak()
 	{
-		$data = $this->m_pejabat->getPjb();
+		$user = $_SESSION['id'];
+		$data = $this->m_pejabat->getDupak($user);
 		$this->load->library('table');
 		$this->load->view('v_daftarpak_pjb',array('data' => $data ));
 	}

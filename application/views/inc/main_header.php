@@ -212,7 +212,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url()."assets/"; ?>dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php  foreach($data as $d) echo $d['nama']; ?></span>
+              <span class="hidden-xs"><?php echo $_SESSION['nama']; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -220,7 +220,7 @@
                 <img src="<?php echo base_url()."assets/"; ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  <?php  foreach($data as $d) echo $d['nama']; ?> - <?php echo $_SESSION['level']; ?>
+                  <?php echo $_SESSION['nama']; ?> - <?php echo $_SESSION['level']; ?>
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>

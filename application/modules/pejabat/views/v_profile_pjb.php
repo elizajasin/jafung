@@ -115,35 +115,77 @@
                   <td>:</td>
                   <td><?php  foreach($data as $d) echo $d['angka_kredit']; ?></td>
                   </tr>
-                  <td>SK PNS</td>
-                  <td>:</td>
-                  <td><?php  foreach($data as $d) echo $d['sk_pns']; ?></td>
-                  </tr>
-                  <tr>
-                  <td>SK Pangkat Terakhir</td>
-                  <td>:</td>
-                  <td><?php  foreach($data as $d) echo $d['sk_pangkat_terakhir']; ?></td>
-                  </tr>
-                  <tr>
-                  <td>SK Jabatan Terakhir</td>
-                  <td>:</td>
-                  <td><?php  foreach($data as $d) echo $d['sk_jabatan_terakhir']; ?></td>
-                  </tr>
-                  <tr>
-                  <td>PAK Terakhir</td>
-                  <td>:</td>
-                  <td><?php  foreach($data as $d) echo $d['pak_terakhir']; ?></td>
-                  </tr>
-                  <td>ID Akun</td>
-                  <td>:</td>
-                  <td><?php  foreach($data as $d) echo $d['id_akun']; ?></td>
-                  </tr>
               </table>
             </div>
-            <!-- /.box -->
           </div>
         </div>
         </div>
+        <!-- ending -->
+        <div class="col-lg-6 text-center">
+          <div class="col-md-12">
+          <div class="box box-primary">
+            <div class="box-header">
+              <i class="fa fa-edit"></i>
+
+              <h3 class="box-title">Foto</h3>
+            </div>
+            <img border="1" src="<?php echo base_url(). $d['foto'];?>" width="300" height="400">
+          </div>
+        </div>
+        </div>
+        <!-- ending -->
+        <div class="col-lg-12 text-center">
+          <div class="col-md-12">
+          <div class="box box-primary">
+            <div class="box-header">
+              <i class="fa fa-edit"></i>
+
+              <h3 class="box-title">SK PNS</h3>
+            </div>
+            <img border="1" src="<?php echo base_url(). $d['sk_pns'];?>" width="133" height="133">
+          </div>
+        </div>
+        </div>
+        <!-- ending -->
+        <div class="col-lg-12 text-center">
+          <div class="col-md-12">
+          <div class="box box-primary">
+            <div class="box-header">
+              <i class="fa fa-edit"></i>
+
+              <h3 class="box-title">SK Pangkat Terakhir</h3>
+            </div>
+            <img border="1" src="<?php echo base_url(). $d['sk_pangkat_terakhir'];?>" width="133" height="133"> 
+          </div>
+        </div>
+        </div>
+        <!-- ending -->
+        <div class="col-lg-12 text-center">
+          <div class="col-md-12">
+          <div class="box box-primary">
+            <div class="box-header">
+              <i class="fa fa-edit"></i>
+
+              <h3 class="box-title">SK Jabatan Terakhir</h3>
+            </div>
+            <img border="1" src="<?php echo base_url(). $d['sk_jabatan_terakhir'];?>" width="133" height="133">
+          </div>
+        </div>
+        </div>
+        <!-- ending -->
+        <div class="col-lg-12 text-center">
+          <div class="col-md-12">
+          <div class="box box-primary">
+            <div class="box-header">
+              <i class="fa fa-edit"></i>
+
+              <h3 class="box-title">PAK Terakhir</h3>
+            </div>
+            <img border="1" src="<?php echo base_url(). $d['pak_terakhir'];?>" width="133" height="133"> 
+          </div>
+        </div>
+        </div>
+        <!-- ending -->
       </div>
       <!-- /.row (main row) -->
 

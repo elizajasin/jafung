@@ -18,14 +18,17 @@ class Login extends MX_Controller {
 	public function process()
 	{
 		
-		$dt = $this->m_login->get_id($this->input->post('username'));
+		$dt_id = $this->m_login->get_id($this->input->post('username'));
+		$dt_nama = $this->m_login->get_nama($dt_id);
 		$data=array(
-			'id' =>$dt,
+			'id' =>$dt_id,
 			'username' =>$this->input->post('username'),
 			'password' =>$this->input->post('password'),
 			'level' =>$this->input->post('level')
 		);
 		$cek=$this->m_login->m_aksi($data);
+		$dt_nama = array('nama' => $dt_nama);
+		$data = array_merge($data,$dt_nama);
 		if ($cek == 1){
 			$this->session->set_userdata($data);	
 			if (($this->session->userdata('level')  == 'Admin')){
