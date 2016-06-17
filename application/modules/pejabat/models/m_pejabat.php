@@ -20,5 +20,10 @@ class M_pejabat extends CI_Model{
 		return $data->result_array();
 	}
 
+	function UpdateData($tableName,$data,$where){
+		$result = $this->db->update($tableName,$data,$where); 
+		return $result;
+	}
+
 }
 ?>

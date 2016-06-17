@@ -67,19 +67,48 @@ class Pejabat extends MX_Controller {
 	}
 
 	public function editpak($id){
-		$pak = $this->mymodel->getPak("where id = '$id'");
+		$pak = $this->m_pejabat->getPak($id);
 		$data = array(
-			"id" => $pasien[0]['id'],
-			"nama" => $pasien[0]['nama'],
-			"tgl" => $pasien[0]['tgl'],
-			"locate" => $pasien[0]['tempat_lahir'],
-			"jk" => $pasien[0]['jk'],
-			"alamat" => $pasien[0]['alamat'],
-			"tal" => $pasien[0]['tal'],
-			"telp" => $pasien[0]['telp'],
-			"email" => $pasien[0]['email'],
-			"rs_id" => $pasien[0]['rs_id']			
+			"id" => $pak[0]['id'],
+			"tgl_pengajuan" => $pak[0]['tgl_pengajuan'],
+			"jenis_pengajuan" => $pak[0]['jenis_pengajuan'],
+			"periode" => $pak[0]['periode'],
+			"status" => $pak[0]['status'],
+			"ak_diajukan" => $pak[0]['ak_diajukan'],
+			"ak_disetujuin" => $pak[0]['ak_disetujuin'],
+			"id_akun" => $pak[0]['id_akun'],		
 		);
-		$this->load->view('edit_pasien', $data);
+		$this->load->view('v_editpak_pjb', $data);
 	}
+
+	public function editpak_proses(){
+		$id = $_POST['id'];
+		$tgl_pengajuan = $_POST['tgl_pengajuan'];
+		$jenis_pengajuan = $_POST['jenis_pengajuan'];
+		$periode = $_POST['periode'];
+		$status = $_POST['status'];
+		$ak_diajukan = $_POST['ak_diajukan'];
+		$ak_disetujuin = $_POST['ak_disetujuin'];
+		
+		$data_update = array(
+			'id' => $id,
+			'tgl_pengajuan' => $tgl_pengajuan,
+			'jenis_pengajuan' => $jenis_pengajuan,
+			'periode' => $periode,
+			'status' => $status,
+			'ak_diajukan' => $ak_diajukan,
+			'ak_disetujuin' => $ak_disetujuin,
+		);
+
+		$where = array('id' => $id);
+		
+		$result = $this->m_pejabat->UpdateData('tbl_dupak',$data_update, $where);
+		var_dump($data_update);
+		if($result >= 1){
+			redirect('pejabat/daftarpak');
+		}else{
+			echo "update gagal"; 
+		}
+	}
+
 }

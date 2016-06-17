@@ -64,10 +64,10 @@
                 <div class="row"><div class="col-sm-6"><div class="dataTables_length" id="example1_length">
                   <label>Show 
                   <select name="example1_length" class="form-control input-sm" aria-controls="example1">
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
+                    <option value="10">10&nbsp;&nbsp;</option>
+                    <option value="25">25&nbsp;&nbsp;</option>
+                    <option value="50">50&nbsp;&nbsp;</option>
+                    <option value="100">100&nbsp;&nbsp;</option>
                   </select> entries
                   </label>
                 </div>
@@ -104,7 +104,7 @@
                     <td><?php  echo $d['ak_diajukan']; ?></td>
                     <td><?php  echo $d['ak_disetujuin']; ?></td>
                     <td align="center">
-                      <a href="<?php  echo base_url()."index.php/pejabat/".$d['id']; ?>" class="btn btn-xs btn-warning" role="button">Edit</a>
+                      <a href="<?php  echo base_url()."index.php/pejabat/editpak/".$d['id']; ?>" class="btn btn-xs btn-warning" role="button">Edit</a>
                       <a href="<?php  echo base_url()."index.php/pejabat/".$d['id']; ?>" class="btn btn-xs btn-info" role="button">Detail</a>
                     </td>
                   </tr>
