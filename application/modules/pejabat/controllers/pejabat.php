@@ -49,9 +49,9 @@ class Pejabat extends MX_Controller {
 
 	// detailpak
 
-	public function detailpak()
+	public function detailpak($id)
 	{
-		$data = $this->m_pejabat->getPjb();
+		$data = $this->m_pejabat->getPak($id);
 		$this->load->library('table');
 		$this->load->view('v_detailpak_pjb',array('data' => $data ));
 	}

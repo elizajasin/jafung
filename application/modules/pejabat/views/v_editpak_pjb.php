@@ -23,8 +23,6 @@
             <a href="#"><i class="fa fa-credit-card"></i> <span>PAK</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
                 <li><a href="<?php echo base_url(). 'index.php/pejabat/daftarpak'; ?>"><i class="fa fa-circle-o"></i>Daftar PAK</a></li>
-                <li><a href="<?php echo base_url(). 'index.php/pejabat/detailpak'; ?>"><i class="fa fa-circle-o"></i>Detail PAK</a></li>
-                <li><a href="<?php echo base_url(). 'index.php/pejabat/isipak'; ?>"><i class="fa fa-circle-o"></i>Isi dan Edit Rincian Kredit</a></li>
                 <li class="active"><a href="#"><i class="fa fa-circle-o"></i>DUPAK</a></li>
             </ul>
         </li>
@@ -61,7 +59,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <form method="post" action="<?php  echo base_url()."index.php/pejabat/editpak_proses/"; ?>">
+              <form method="post" action="<?php  echo base_url()."index.php/pejabat/editpak_proses/"; ?>" class="col-lg-6">
                 <!-- ID -->
                 <div class="form-group">
                   <label for="exampleInputEmail1">ID</label>

@@ -23,8 +23,6 @@
             <a href="#"><i class="fa fa-credit-card"></i> <span>PAK</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
                 <li><a href="<?php echo base_url(). 'index.php/pejabat/daftarpak'; ?>"><i class="fa fa-circle-o"></i>Daftar PAK</a></li>
-                <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Detail PAK</a></li>
-                <li><a href="<?php echo base_url(). 'index.php/pejabat/isipak'; ?>"><i class="fa fa-circle-o"></i>Isi dan Edit Rincian Kredit</a></li>
                 <li><a href="<?php echo base_url(). 'index.php/pejabat/dupak'; ?>"><i class="fa fa-circle-o"></i>DUPAK</a></li>
             </ul>
         </li>
@@ -52,6 +50,65 @@
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
+        <div class="col-lg-6 text-center">
+          <div class="col-md-12">
+          <div class="box box-primary">
+            <div class="box-header">
+              <i class="fa fa-edit"></i>
+
+              <h3 class="box-title">Profile Pejabat Fungsional</h3>
+            </div>
+            <div class="box-body pad table-responsive">
+              <table class="table table-bordered text-center" border="0">
+                <?php  foreach($data as $d){ ?>
+                <tr>
+                  <td>ID</td>
+                  <td>:</td>
+                  <td><?php echo $d['id']; ?></td>
+                  </tr>
+                  <tr>
+                  <td>Tanggal Pengajuan</td>
+                  <td>:</td>
+                  <td><?php echo $d['tgl_pengajuan']; ?></td>
+                  </tr>
+                  <tr>
+                  <td>Jenis Pengajuan</td>
+                  <td>:</td>
+                  <td><?php echo $d['jenis_pengajuan']; ?></td>
+                  </tr>
+                  <tr>
+                  <td>Periode</td>
+                  <td>:</td>
+                  <td><?php echo $d['periode']; ?></td>
+                  </tr>
+                  <tr>
+                  <td>Status</td>
+                  <td>:</td>
+                  <td><span class=<?php  
+                          if ($d['status'] == 'Approved'){
+                            echo "'label label-success'";
+                          }elseif ($d['status'] == 'Pending') {
+                            echo "'label label-warning'";
+                          }elseif ($d['status'] == 'Denied') {
+                            echo "'label label-danger'";
+                          }
+                             ?>><?php  echo $d['status']; ?></span></td>
+                  </tr>
+                  <tr>
+                  <td>Angka Kredit yang Diajukan</td>
+                  <td>:</td>
+                  <td><?php echo $d['ak_diajukan']; ?></td>
+                  </tr>
+                  <tr>
+                  <td>Angka Kredit yang Disetujui</td>
+                  <td>:</td>
+                  <td><?php echo $d['ak_disetujuin']; ?></td>
+                  </tr>
+                  <?php  } ?>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
       <!-- /.row (main row) -->
 
