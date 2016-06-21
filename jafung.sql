@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 16, 2016 at 09:41 AM
+-- Generation Time: Jun 21, 2016 at 09:16 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -43,17 +43,17 @@ CREATE TABLE IF NOT EXISTS `tbl_dupak` (
 --
 
 INSERT INTO `tbl_dupak` (`id`, `tgl_pengajuan`, `jenis_pengajuan`, `periode`, `status`, `ak_diajukan`, `ak_disetujuin`, `id_akun`) VALUES
-(1, '2016-06-22', 'a', '3', 'acc', 'dddd', 'fff', 116),
-(2, '2016-06-08', 'd', 'd', 'd', 'd', 'd', 116),
-(3, '2016-06-24', 's', 'g', 'd', 'b', 's', 116),
-(4, '2016-06-15', 'g', 'b', 'd', 'a', 'g', 116),
-(5, '2016-06-09', 'f', 's', 'v', 'z', 'c', 116),
-(6, '2016-06-18', 'g', 'd', 'a', 'c', 'b', 116),
-(7, '2016-06-18', 'f', 's', 'f', 'c', 'g', 116),
-(8, '2016-06-28', 'f', 'g', 'd', 'a', 'r', 116),
-(9, '2016-06-02', 'df', 'd', 'b', 'a', 'c', 116),
-(10, '2016-06-17', 'f', 'c', 'z', 'x', 'v', 116),
-(11, '2016-06-11', 'f', 'c', 's', 'e', 'f', 116);
+(1, '2016-06-26', 'a', 'a', 'Approved', 'a', 'a', 116),
+(2, '2016-06-08', 'd', 'd', 'Pending', 'd', 'd', 116),
+(3, '2016-06-24', 's', 'g', 'Approved', 'b', 's', 116),
+(4, '2016-06-15', 'g', 'b', 'Denied', 'a', 'g', 116),
+(5, '2016-06-09', 'f', 's', 'Approved', 'z', 'c', 116),
+(6, '2016-06-18', 'g', 'd', 'Denied', 'c', 'b', 116),
+(7, '2016-06-18', 'f', 's', 'Pending', 'c', 'g', 116),
+(8, '2016-06-28', 'f', 'g', 'Denied', 'a', 'r', 116),
+(9, '2016-06-02', 'df', 'd', 'Approved', 'a', 'c', 116),
+(10, '2016-06-17', 'f', 'c', 'Pending', 'x', 'v', 116),
+(11, '2016-06-11', 'f', 'c', 'Approved', 'e', 'f', 116);
 
 -- --------------------------------------------------------
 
@@ -112,7 +112,9 @@ CREATE TABLE IF NOT EXISTS `tbl_pejabat` (
 
 INSERT INTO `tbl_pejabat` (`nip`, `nama`, `tempat`, `tgl_lahir`, `foto`, `pangkat`, `pangkat_terakhir`, `jabatan`, `jabatan_terakhir`, `unit_organisasi`, `instansi`, `angka_kredit`, `sk_pns`, `sk_pangkat_terakhir`, `sk_jabatan_terakhir`, `pak_terakhir`, `id_akun`) VALUES
 ('1111111', 'Eliza Jasin', 'Jakarta', '2016-06-05', 'uploads/sk_pejabat/donald.jpg', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'uploads/sk_pejabat/test.jpg', 'uploads/sk_pejabat/cat.jpg', 'uploads/sk_pejabat/tele.PNG', 'uploads/sk_pejabat/bunny.jpg', 115),
-('222222222222', 'Riviera Jasin', 'Bandung', '2016-06-08', 'uploads/sk_pejabat/donald.jpg', 'f', 'd', 'd', 'r', 'd', 'd', 'd', 'uploads/sk_pejabat/test.jpg', 'uploads/sk_pejabat/cat.jpg', 'uploads/sk_pejabat/tele.PNG', 'uploads/sk_pejabat/bunny.jpg', 116);
+('222222222222', 'Riviera Jasin', 'Bandung', '2016-06-08', 'uploads/sk_pejabat/donald.jpg', 'f', 'd', 'd', 'r', 'd', 'd', 'd', 'uploads/sk_pejabat/test.jpg', 'uploads/sk_pejabat/cat.jpg', 'uploads/sk_pejabat/tele.PNG', 'uploads/sk_pejabat/bunny.jpg', 116),
+('333333333', 'Rachmawati Jasin', 'Jakarta', '2016-06-03', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 117),
+('444444', 'Jasin Jasin', 'Semarang', '2016-06-29', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 118);
 
 -- --------------------------------------------------------
 

@@ -16,16 +16,14 @@
         <li>
             <a href="<?php echo base_url(). 'index.php/admin'; ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a>
         </li>
-        <li>
-            <a href="<?php echo base_url(). 'index.php/pejabat/profile'; ?>"><i class="fa fa-user"></i> <span>Profile</span></a>
-        </li>
-        <li class="treeview">
+        <li class="treeview active">
             <a href="#"><i class="fa fa-credit-card"></i> <span>PAK</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
                 <li><a href="<?php echo base_url(). 'index.php/admin/viewpjb'; ?>"><i class="fa fa-circle-o"></i>Daftar Pejabat Fungsional</a></li>
+                <li><a href="<?php echo base_url(). 'index.php/admin/inputpjb'; ?>"><i class="fa fa-circle-o"></i>Input Pejabat Fungsional</a></li>
                 <li><a href="<?php echo base_url(). 'index.php/admin/inputkegiatan'; ?>"><i class="fa fa-circle-o"></i>Input Kegiatan</a></li>
-                <li><a href="<?php echo base_url(). 'index.php/pejabat/isipak'; ?>"><i class="fa fa-circle-o"></i>Isi dan Edit Rincian Kredit</a></li>
-                <li><a href="<?php echo base_url(). 'index.php/pejabat/dupak'; ?>"><i class="fa fa-circle-o"></i>DUPAK</a></li>
+                <li><a href="<?php echo base_url(). 'index.php/admin/daftarkredit'; ?>"><i class="fa fa-circle-o"></i>Daftar Unsur Angka Kredit</a></li>
+                <li class="active"><a href="<?php echo base_url(). 'index.php/admin/detailkegiatan'; ?>"><i class="fa fa-circle-o"></i>Detail Kegiatan</a></li>
             </ul>
         </li>
       </ul>
@@ -54,51 +52,11 @@
       <div class="row">
         <!-- /.box -->
         <div class="col-md-12">
-          <div class="box box-info">
+          <div class="box box-primary">
             <div class="box-header with-border">
               <h3 class="box-title">Detail Unsur Kegiatan</h3>
             </div>
             <!-- /.box-header -->
-            <!-- form start -->
-            <form class="form-horizontal">
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="" class="col-sm-4 control-label">Nomor Peraturan</label>
-
-                  <div class="col-sm-5">
-                    <input type="" class="form-control" id="" placeholder="">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="" class="col-sm-4 control-label">Tanggal Peraturan</label>
-
-                  <div class="col-sm-5">
-                  <div class="input-group date">
-                  <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
-                  </div>
-                  <input type="text" class="form-control pull-right" id="datepicker">
-                </div>
-                </div>
-                </div>
-                <div class="form-group">
-                <label for="" class="col-sm-4 control-label">Status</label>
-                <div class="col-sm-2">
-                  <select class="form-control">
-                    <option>YA</option>
-                    <option>TIDAK</option>
-                    <option>PENDING</option>
-                  </select>
-                  </div>
-                </div>
-              </div>
-              <!-- /.box-body -->
-              <div class="box-footer">
-                <button type="submit" class="btn btn-default">Cancel</button>
-                <button type="submit" class="btn btn-info pull-right">Submit</button>
-              </div>
-              <!-- /.box-footer -->
-            </form>
           </div>
       </div>
       <!-- /.row (main row) -->
