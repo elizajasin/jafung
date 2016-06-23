@@ -10,6 +10,10 @@ class M_admin extends CI_Model{
 		return $data->result_array();
 	}
 
+	function InsertData($tableName,$data){
+		$result = $this->db->insert($tableName,$data); 
+		return $result;
+	}
 
 }
 ?>

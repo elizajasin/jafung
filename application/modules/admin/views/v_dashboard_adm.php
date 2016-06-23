@@ -26,6 +26,7 @@
                 <li><a href="<?php echo base_url(). 'index.php/admin/detailkegiatan'; ?>"><i class="fa fa-circle-o"></i>Detail Kegiatan</a></li>
             </ul>
         </li>
+        <li><a href="<?php echo base_url(). 'index.php/admin/addacuanpak'; ?>"><i class="fa fa-book"></i> <span>Add Acuan PAK</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 21, 2016 at 09:16 AM
+-- Generation Time: Jun 23, 2016 at 06:42 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -19,6 +19,37 @@ SET time_zone = "+00:00";
 --
 -- Database: `jafung`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_acuanpak`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_acuanpak` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `bidang` varchar(100) NOT NULL,
+  `bagian` varchar(100) NOT NULL,
+  `subbagian` varchar(100) NOT NULL,
+  `kegiatan` varchar(100) NOT NULL,
+  `satuan_hasil` varchar(100) DEFAULT NULL,
+  `angka_kredit` int(11) DEFAULT NULL,
+  `batasan_penilaian` varchar(100) DEFAULT NULL,
+  `pelaksana` varchar(100) DEFAULT NULL,
+  `bukti_fisik` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `tbl_acuanpak`
+--
+
+INSERT INTO `tbl_acuanpak` (`id`, `bidang`, `bagian`, `subbagian`, `kegiatan`, `satuan_hasil`, `angka_kredit`, `batasan_penilaian`, `pelaksana`, `bukti_fisik`) VALUES
+(1, 'Pranata Komputer Ahli', 'Pendidikan', 'Pendidikan Sekolah dan Memperoleh Ijazah/Gelar', 'Doktor (S3)', 'Ijasah ', 200000, '-', 'Semua jenjang', 'Fotokopi Ijasah'),
+(3, 'Pranata Komputer Ahli', 'Pendidikan', 'Pendidikan Sekolah dan Memperoleh Ijazah/Gelar', 'Pasca Sarjana (S2)', 'Ijasah', 150000, '-', 'Semua jenjang', 'Fotokopi Ijasah'),
+(4, 'Pranata Komputer Ahli', 'Pendidikan', 'Pendidikan Sekolah dan Memperoleh Ijazah/Gelar', 'Sarjana (S1)/Diploma-IV', 'Ijasah', 100000, '-', 'Semua jenjang', 'Fotokopi Ijasah'),
+(5, 'Pranata Komputer Ahli', 'Pendidikan', 'Pendidikan dan Pelatihan Fungsional di Bidang Kepranataan Komputer dan Memperoleh Surat Tanda Tamat ', 'Lamanya lebih dari 960 jam', 'Sertifikat ', 15000, '-', 'Semua jenjang', 'Fotokopi STTPP'),
+(6, 'Pranata Komputer Ahli', 'Pendidikan', 'Pendidikan dan Pelatihan Fungsional di Bidang Kepranataan Komputer dan Memperoleh Surat Tanda Tamat ', 'Lamanya antara 641 - 960 jam', 'Sertifikat ', 9000, '-', 'Semua jenjang', 'Fotokopi STTPP');
 
 -- --------------------------------------------------------
 

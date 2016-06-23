@@ -104,18 +104,62 @@ class Admin extends MX_Controller {
 		$this->load->view('v_detailkegiatan_adm');
 	}
 
+	// add acuan pak
+	public function addacuanpak()
+	{
+		$this->load->view('v_addacuanpak_adm');
+	}
+
+	public function addacuanpak_proses(){ //pemrosesan dari registration page
+		$bidang = $_POST['bidang'];
+		$bagian = $_POST['bagian'];
+		$subbagian = $_POST['subbagian'];
+		$kegiatan = $_POST['kegiatan'];
+		$satuan_hasil = $_POST['satuan_hasil'];
+		$angka_kredit = $_POST['angka_kredit'];
+		$batasan_penilaian = $_POST['batasan_penilaian'];
+		$pelaksana = $_POST['pelaksana'];
+		$bukti_fisik = $_POST['bukti_fisik'];
+
+		$data_insert = array(
+			'bidang' => $bidang,
+			'bagian' => $bagian,
+			'subbagian' => $subbagian,
+			'kegiatan' => $kegiatan,
+			'satuan_hasil' => $satuan_hasil,
+			'angka_kredit' => $angka_kredit,
+			'batasan_penilaian' => $batasan_penilaian,
+			'pelaksana' => $pelaksana,
+			'bukti_fisik' => $bukti_fisik,
+		);
+		$result = $this->m_admin->InsertData('tbl_acuanpak',$data_insert);
+		
+		if($result >= 1){
+			redirect('admin/index');
+		}else{
+			echo "insert gagal"; 
+		}
+	}
+
+	// penilaian
+
 	public function penilaian()
 	{
 		$this->load->view('v_penilaian_adm');
 	}
+
+	// konfigperiode
 
 	public function konfigperiode()
 	{
 		$this->load->view('v_konfigperiode_adm');
 	}
 
+	// konfiguser
+
 	public function konfiguser()
 	{
 		$this->load->view('v_konfiguser_adm');
 	}
+
 }
