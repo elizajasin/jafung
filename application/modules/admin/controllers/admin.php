@@ -83,13 +83,6 @@ class Admin extends MX_Controller {
 		}
 	}
 
-	// input kegiatan
-
-	public function inputkegiatan()
-	{
-		$this->load->view('v_inputkegiatan_adm');
-	}
-
 	// daftarkredit
 
 	public function daftarkredit()
@@ -139,27 +132,6 @@ class Admin extends MX_Controller {
 		}else{
 			echo "insert gagal"; 
 		}
-	}
-
-	// penilaian
-
-	public function penilaian()
-	{
-		$this->load->view('v_penilaian_adm');
-	}
-
-	// konfigperiode
-
-	public function konfigperiode()
-	{
-		$this->load->view('v_konfigperiode_adm');
-	}
-
-	// konfiguser
-
-	public function konfiguser()
-	{
-		$this->load->view('v_konfiguser_adm');
 	}
 
 }

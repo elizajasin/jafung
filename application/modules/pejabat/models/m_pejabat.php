@@ -25,5 +25,10 @@ class M_pejabat extends CI_Model{
 		return $result;
 	}
 
+	function InsertData($tableName,$data){
+		$result = $this->db->insert($tableName,$data); 
+		return $result;
+	}
+
 }
 ?>

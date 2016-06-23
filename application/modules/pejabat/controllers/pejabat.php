@@ -39,12 +39,45 @@ class Pejabat extends MX_Controller {
 		$this->load->view('v_isipak_pjb',array('data' => $data ));
 	}
 
+	// adddupak
+	public function adddupak()
+	{
+		$data = $this->m_pejabat->getPjb();
+		$this->load->library('table');
+		$this->load->view('v_adddupak_pjb',array('data' => $data ));
+	}
+
 	// dupak
 	public function dupak()
 	{
 		$data = $this->m_pejabat->getPjb();
 		$this->load->library('table');
 		$this->load->view('v_dupak_pjb',array('data' => $data ));
+	}
+
+	public function adddupak_proses(){	
+		$tgl_pengajuan = $_POST['tgl_pengajuan'];
+		$jenis_pengajuan = $_POST['jenis_pengajuan'];
+		$periode = $_POST['periode'];
+		$status = "Draft";
+		$ak_disetujuin = 0;
+		$id_akun = $_SESSION['id'];
+
+		$data_insert = array(
+			'tgl_pengajuan' => $tgl_pengajuan,
+			'jenis_pengajuan' => $jenis_pengajuan,
+			'periode' => $periode,
+			'status' => $status,
+			'ak_disetujuin' => $ak_disetujuin,
+			'id_akun' => $id_akun,
+		);
+		$result = $this->m_pejabat->InsertData('tbl_dupak',$data_insert);
+		
+		if($result >= 1){
+			redirect('pejabat/adddupak');
+		}else{
+			echo "insert gagal"; 
+		}
 	}
 
 	// detailpak

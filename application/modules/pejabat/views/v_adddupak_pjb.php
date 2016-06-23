@@ -55,30 +55,60 @@
           <!-- general form elements disabled -->
           <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Pengajuan Angka Kredit</h3>
+              <h3 class="box-title">Angka Kredit Yang Diajukan</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <form method="post" action="<?php  echo base_url()."index.php/pejabat/adddupak_proses/"; ?>" class="col-lg-6">
-                <!-- Tanggal Pengajuan -->
+              <form method="post" action="<?php  echo base_url()."index.php/pejabat/adddupak_proses/"; ?>" class="col-lg-12">
+                <!-- Angka Kredit yang Diajukan -->
                 <div class="form-group">
-                  <label>Tanggal Pengajuan:</label>
-                  <div class="input-group">
-                    <div class="input-group-addon">
-                      <i class="fa fa-calendar"></i>
-                    </div>
-                    <input name="tgl_pengajuan" value="" class="form-control" type="date" data-mask="" data-inputmask="'alias': 'dd/mm/yyyy'">
+                  <div class="box-body">
+                    <table class="table table-bordered">
+                      <tbody><tr>
+                        <th style="width: 10px">No.</th>
+                        <th colspan="3">Sub Unsur Yang Dinilai</th>
+                        <th>Angka Kredit Lama</th>
+                        <th>Angka Kredit Baru</th>
+                        <th>Jumlah Angka Kredit</th>
+                        <th>Bukti Pendukung</th>
+                      </tr>
+                      <tr>
+                        <th rowspan="4">I. </th>
+                        <th colspan="3">Unsur Utama</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td colspan="3">Pendidikan</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <td>A. </td>
+                          <td>Pendidikan Sekolah dan Memperoleh Ijazah/Gelar</td>
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <td></td>
+                          <td>1. Doktor (S3)</td>
+                        </td>
+                        <td><input class="form-control" value="" name="ak_diajukan" id="exampleInputEmail1" type="text" readonly></td>
+                        <td><input class="form-control" value="" name="" id="exampleInputEmail1" type="text"></td>
+                        <td><input class="form-control" value="" name="" id="exampleInputEmail1" type="text" readonly></td>
+                        <td><a href="" class="btn btn-xs btn-primary" role="button">Upload</a></td>
+                      </tr>
+                    </tbody></table>
                   </div>
-                </div>
-                <!-- Jenis Pengajuan -->
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Jenis Pengajuan</label>
-                  <input class="form-control" value="" name="jenis_pengajuan" id="exampleInputEmail1" type="text">
-                </div>
-                <!-- Periode -->
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Periode</label>
-                  <input class="form-control" value="" name="periode" id="exampleInputEmail1" type="text">
                 </div>
                 <!-- Submit -->
                 <div class="box-footer">

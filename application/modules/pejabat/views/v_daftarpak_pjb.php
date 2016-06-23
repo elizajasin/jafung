@@ -24,7 +24,7 @@
             <a href="#"><i class="fa fa-credit-card"></i> <span>PAK</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">
                 <li class="active"><a href="#"><i class="fa fa-circle-o"></i>Daftar PAK</a></li>
-                <li><a href="<?php echo base_url(). 'index.php/pejabat/dupak'; ?>"><i class="fa fa-circle-o"></i>DUPAK</a></li>
+                <li><a href="<?php echo base_url(). 'index.php/pejabat/dupak'; ?>"><i class="fa fa-circle-o"></i>Pengajuan Angka Kredit</a></li>
             </ul>
         </li>
       </ul>
@@ -78,12 +78,16 @@
                     <td><?php  echo $d['jenis_pengajuan']; ?></td>
                     <td><?php  echo $d['periode']; ?></td>
                     <td><span class=<?php  
-                          if ($d['status'] == 'Approved'){
+                          if ($d['status'] == 'Penetapan'){
+                            echo "'label label-primary'";
+                          }elseif ($d['status'] == 'Penilaian') {
                             echo "'label label-success'";
-                          }elseif ($d['status'] == 'Pending') {
+                          }elseif ($d['status'] == 'Proses') {
                             echo "'label label-warning'";
-                          }elseif ($d['status'] == 'Denied') {
+                          }elseif ($d['status'] == 'Pengajuan') {
                             echo "'label label-danger'";
+                          }elseif ($d['status'] == 'Draft') {
+                            echo "'label label-info'";
                           }
                              ?>><?php  echo $d['status']; ?></span></td>
                     <td><?php  echo $d['ak_diajukan']; ?></td>

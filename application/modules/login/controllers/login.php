@@ -32,20 +32,16 @@ class Login extends MX_Controller {
 		if ($cek == 1){
 			$this->session->set_userdata($data);	
 			if (($this->session->userdata('level')  == 'Admin')){
-				$this->load->module('admin');
-				$this->admin->index();
+				redirect('admin/index');
 			}
 			elseif (($this->session->userdata('level')  == 'Pejabat Fungsional')) {		
-				$this->load->module('pejabat');
-				$this->pejabat->index();
+				redirect('pejabat/index');
 			}
 			elseif (($this->session->userdata('level') == 'Tim Sekretariat')) {
-				$this->load->module('sekretariat');
-				$this->sekretariat->index();
+				redirect('sekretariat/index');
 			}
 			else {
-				$this->load->module('penilai');
-				$this->penilai->index();
+				redirect('penilai/index');
 			}
 		}else{
 			$data['error'] = 'Account is invalid';
