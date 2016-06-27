@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="<?php echo base_url()."assets/"; ?>bootstrap/css/bootstrap/css/bootsrap-responsive.css">
   <link rel="stylesheet" href="<?php echo base_url()."assets/"; ?>bootstrap/css/bootstrap/css/bootsrap-responsive.min.css">
   <div class="login-page">
-    <center><h1>Sistem Informasi Jabatan Fungsional</h1></center>
+    <center><img width=480 height=160 src="<?php echo base_url()."assets/"; ?>image/jafung.png"></center>
     <div class="form">
       <?php echo isset($error) ? $error : ''; ?>
       <?php echo form_open("login/process");?>
@@ -42,8 +42,10 @@
         </form>
       </table>
       <?php echo form_close(); ?>
-    </div>
+    </div>    
  </div>
+ <aside style="float:right; width:35%;padding-left:5px;"><img width=300 height=160 src="<?php echo base_url()."assets/"; ?>image/gedungkanan.png" align="right"></aside>
+ <aside style="float:left; width:35%;padding-right:5px;"><img width=300 height=160 src="<?php echo base_url()."assets/"; ?>image/gedungkiri.png" align="right"></aside>
  <script src="<?php echo base_url()."assets/"; ?>bootstrap/css/bootstrap/js/bootstrap.min.js"></script>
  <script src="<?php echo base_url()."assets/"; ?>bootstrap/css/bootstrap/js/bootstrap.js"></script>
  <script src="<?php echo base_url()."assets/"; ?>bootstrap/js/bootstraplogin.js"></script>
