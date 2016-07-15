@@ -99,6 +99,8 @@ class Pejabat extends MX_Controller {
 		$this->load->view('v_daftarpak_pjb',array('data' => $data ));
 	}
 
+	// editpak
+
 	public function editpak($id){
 		$pak = $this->m_pejabat->getPak($id);
 		$data = array(

@@ -44,8 +44,6 @@
       <?php echo form_close(); ?>
     </div>    
  </div>
- <aside style="float:right; width:35%;padding-left:5px;"><img width=300 height=160 src="<?php echo base_url()."assets/"; ?>image/gedungkanan.png" align="right"></aside>
- <aside style="float:left; width:35%;padding-right:5px;"><img width=300 height=160 src="<?php echo base_url()."assets/"; ?>image/gedungkiri.png" align="right"></aside>
  <script src="<?php echo base_url()."assets/"; ?>bootstrap/css/bootstrap/js/bootstrap.min.js"></script>
  <script src="<?php echo base_url()."assets/"; ?>bootstrap/css/bootstrap/js/bootstrap.js"></script>
  <script src="<?php echo base_url()."assets/"; ?>bootstrap/js/bootstraplogin.js"></script>

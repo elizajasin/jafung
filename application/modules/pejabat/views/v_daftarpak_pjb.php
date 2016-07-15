@@ -60,6 +60,7 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
+                  <th>No</th>
                   <th>ID</th>
                   <th>Tanggal Pengajuan</th>
                   <th>Jenis Pengajuan</th>
@@ -71,8 +72,9 @@
                 </tr>
                 </thead>
                 <tbody>
-                <?php  foreach($data as $d){ ?>
+                <?php  $no = 0; foreach($data as $d){ ?>
                   <tr>
+                    <td><?php  $no = $no+1; echo $no; ?></td>
                     <td><?php  echo $d['id']; ?></td>
                     <td><?php  echo $d['tgl_pengajuan']; ?></td>
                     <td><?php  echo $d['jenis_pengajuan']; ?></td>

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-<?php $this->load->view('inc/header'); ?>
+<?php $this->load->view('inc/head_table'); ?>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
+
 <?php $this->load->view('inc/main_header'); ?>
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
@@ -47,122 +48,56 @@
       </ol>
     </section>
 
-    <!-- Main content -->
+     <!-- Main content -->
     <section class="content">
-      <!-- Small boxes (Stat box) -->
       <div class="row">
-        <!-- /.box -->
-        <div class="col-md-12">
+        <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Daftar Pejabat Fungsional</h3>
+              <h3 class="box-title">Daftar PAK</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <div class="dataTables_wrapper form-inline dt-bootstrap" id="example1_wrapper">
-                <div class="row"><div class="col-sm-6"><div class="dataTables_length" id="example1_length">
-                  <label>Show 
-                  <select name="example1_length" class="form-control input-sm" aria-controls="example1">
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                  </select> entries
-                  </label>
-                </div>
-              </div>
-              <div class="col-sm-6" align="right">
-                <div class="dataTables_filter" id="example1_filter">
-                  <label>Search:
-                    <input class="form-control input-sm" aria-controls="example1" type="search" placeholder="">
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-12">
-                <table class="table table-bordered table-striped dataTable" id="example1" role="grid" aria-describedby="example1_info">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>No</th>
+                  <th>NIP</th>
+                  <th>Nama</th>
+                  <th>Golongan</th>
+                  <th>Jabatan</th>
+                  <th>Angka Kredit yang Diajukan</th>
+                  <th>Aksi</th>
+                </tr>
+                </thead>
                 <tbody>
-                
-                  <tr>
-                    <thead>
-                    <tr>
-                    <th>No.</th>
-                    <th>NIP</th>
-                    <th>Nama</th>
-                    <th>Golongan</th>
-                    <th>Jabatan</th>
-                    <th>Angka Kredit yang Diajukan</th>
-                    <th>Aksi</th>
-                  </tr>
-                    <?php  foreach($data as $d){
-                    ?>
-                  <tr>
-                    <td>x</td>
+                <?php $no = 0; foreach($data as $d){ ?>
+                <tr>
+                    <td><?php $no = $no+1; echo $no;?></td>
                     <td><?php  echo $d['nip']; ?></td>
                     <td><?php  echo $d['nama']; ?></td>
                     <td><?php  echo $d['pangkat']; ?></td>
                     <td><?php  echo $d['jabatan']; ?></td>
                     <td><?php  echo $d['angka_kredit']; ?></td>
                     <td align="center">
-                      <a href="" class="btn btn-xs btn-warning" role="button">Edit</a>
-                      <a href="" class="btn btn-xs btn-info" role="button">Detail</a>
+                      <a href="<?php  echo base_url()."index.php/sekretariat/editpjb/".$d['id_akun']; ?>" class="btn btn-xs btn-warning" role="button">Edit</a>
+                      <a href="<?php  echo base_url()."index.php/sekretariat/detailpjb/".$d['id_akun']; ?>" class="btn btn-xs btn-info" role="button">Detail</a>
                     </td>
                   </tr>
                   <?php  } ?>
-                </tbody>
+                </tfoot>
               </table>
             </div>
-            <div class="box-body">
-              <div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div>
-              <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate" align="right">
-                <ul class="pagination">
-                  <li class="paginate_button previous disabled" id="example1_previous">
-                    <a tabindex="0" aria-controls="example1" href="#" data-dt-idx="0">Previous</a>
-                  </li>
-                  <li class="paginate_button active">
-                    <a tabindex="0" aria-controls="example1" href="#" data-dt-idx="1">1</a>
-                  </li>
-                  <li class="paginate_button ">
-                    <a tabindex="0" aria-controls="example1" href="#" data-dt-idx="2">2</a>
-                  </li>
-                  <li class="paginate_button ">
-                    <a tabindex="0" aria-controls="example1" href="#" data-dt-idx="3">3</a>
-                  </li>
-                  <li class="paginate_button ">
-                    <a tabindex="0" aria-controls="example1" href="#" data-dt-idx="4">4</a>
-                  </li>
-                  <li class="paginate_button ">
-                    <a tabindex="0" aria-controls="example1" href="#" data-dt-idx="5">5</a>
-                  </li>
-                  <li class="paginate_button ">
-                    <a tabindex="0" aria-controls="example1" href="#" data-dt-idx="6">6</a>
-                  </li>
-                  <li class="paginate_button next" id="example1_next">
-                    <a tabindex="0" aria-controls="example1" href="#" data-dt-idx="7">Next</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            
             <!-- /.box-body -->
           </div>
           <!-- /.box -->
         </div>
-        </div>
-        </div>
+        <!-- /.col -->
       </div>
-      <!-- /.row (main row) -->
-
+      <!-- /.row -->
     </section>
     <!-- /.content -->
   </div>
-  <!-- /.content-wrapper -->
-  <?php $this->load->view('inc/main_footer'); ?>
-
-  <!-- Control Sidebar -->
-  <?php $this->load->view('inc/control_sidebar'); ?>
-
-  <?php $this->load->view('inc/footer'); ?>
+  <?php $this->load->view('inc/foot_table'); ?>
 </body>
 </html>
